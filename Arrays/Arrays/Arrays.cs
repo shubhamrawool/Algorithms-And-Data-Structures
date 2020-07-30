@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Arrays
+namespace Data_Structures
 {
     public class Arrays<T>
     {
