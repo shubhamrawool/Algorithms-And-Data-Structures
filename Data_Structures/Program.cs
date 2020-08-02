@@ -32,6 +32,11 @@ namespace Data_Structures
             linkedList.AddFirst(0);
             linkedList.AddLast(-1);
             linkedList.AddLast(4);
+            linkedList.Print();
+            Console.WriteLine(linkedList.getKthFromTheEnd(2));
+            Console.WriteLine("Reverse");
+            linkedList.Reverse();
+            linkedList.Print();
             linkedList.DeleteFirst();
             linkedList.DeleteLast();
             Console.WriteLine(linkedList.Contains(1));

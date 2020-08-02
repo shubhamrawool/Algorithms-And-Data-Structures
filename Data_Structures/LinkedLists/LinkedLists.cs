@@ -130,6 +130,53 @@ namespace Data_Structures.LinkedLists
             }
         }
 
+        public void Reverse()
+        {
+            if (IsEmpty())
+            {
+                return;
+            }
+            var previous = first;
+            var current = previous.next;
+            while(current != null)
+            {
+                var next = current.next;
+                current.next = previous;
+                previous = current;
+                current = next;
+            }
+
+            last = first;
+            last.next = null;
+            first = previous;
+        }
+
+        public T getKthFromTheEnd(int k)
+        {
+            if(k < 0 || IsEmpty())
+            {
+                throw new InvalidOperationException();
+            }
+            var distance = k - 1;
+            var trackingNode = first;
+            var targetNode = first;
+            for(var i = 0; i < k-1; i++)
+            {
+                trackingNode = trackingNode.next;
+                if(trackingNode == null)
+                {
+                    throw new InvalidOperationException();
+                }
+            }
+            while(trackingNode != last)
+            {
+                targetNode = targetNode.next;
+                trackingNode = trackingNode.next;
+            }
+            return targetNode.value;
+            
+        }
+
         private bool IsEmpty()
         {
             return first == null;
