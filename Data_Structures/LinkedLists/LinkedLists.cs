@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Data_Structures.LinkedLists
 {
@@ -157,7 +156,6 @@ namespace Data_Structures.LinkedLists
             {
                 throw new InvalidOperationException();
             }
-            var distance = k - 1;
             var trackingNode = first;
             var targetNode = first;
             for(var i = 0; i < k-1; i++)
@@ -173,8 +171,7 @@ namespace Data_Structures.LinkedLists
                 targetNode = targetNode.next;
                 trackingNode = trackingNode.next;
             }
-            return targetNode.value;
-            
+            return targetNode.value;   
         }
 
         private bool IsEmpty()
