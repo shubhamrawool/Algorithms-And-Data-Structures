@@ -1,4 +1,6 @@
-﻿using Data_Structures.LinkedLists;
+﻿using Data_Structures.Exercise;
+using Data_Structures.LinkedLists;
+using Data_Structures.Stack;
 using System;
 
 namespace Data_Structures
@@ -8,7 +10,9 @@ namespace Data_Structures
         static void Main(string[] args)
         {
             //PerformArrayOps();
-            PerformLinkedListOps();
+            //PerformLinkedListOps();
+            PerformStackOps();
+            //PerformExcerciseOps();
         }
 
         private static void PerformArrayOps()
@@ -45,6 +49,25 @@ namespace Data_Structures
             Console.WriteLine(linkedList.IndexOf(21));
             Console.WriteLine(linkedList.ToArray());
             linkedList.Print();
+            Console.ReadLine();
+        }
+
+        private static void PerformStackOps()
+        {
+            var stacks = new Stacks<int>(5);
+            stacks.Push(1);
+            stacks.Push(2);
+            Console.WriteLine(stacks.Pop());
+            Console.WriteLine(stacks.Peek());
+            Console.WriteLine(stacks.IsEmpty());
+            Console.ReadLine();
+        }
+
+        private static void PerformExcerciseOps()
+        {
+            var ex = new Excercise();
+            Console.WriteLine(ex.ReverseUsingStack("abcdef"));
+            Console.WriteLine(ex.IsBalancedExpression2("((([1] + [[3]] ))) <{aaa}>"));
             Console.ReadLine();
         }
     }
