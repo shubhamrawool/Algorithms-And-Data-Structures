@@ -98,5 +98,19 @@ namespace Data_Structures.Exercise
         {
             return leftBrackets.IndexOf(left) == rightBrackets.IndexOf(right);
         }
+
+        public Queue<T> ReverseQueue<T>(Queue<T> queue)
+        {
+            var stack = new Stack<T>();
+            while(queue.Count != 0)
+            {
+                stack.Push(queue.Dequeue());
+            }
+            while(stack.Count != 0)
+            {
+                queue.Enqueue(stack.Pop());
+            }
+            return queue;
+        }
     }
 }

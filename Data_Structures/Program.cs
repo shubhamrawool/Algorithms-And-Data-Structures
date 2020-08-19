@@ -1,7 +1,10 @@
 ﻿using Data_Structures.Exercise;
 using Data_Structures.LinkedLists;
+using Data_Structures.Queue;
 using Data_Structures.Stack;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Data_Structures
 {
@@ -11,7 +14,8 @@ namespace Data_Structures
         {
             //PerformArrayOps();
             //PerformLinkedListOps();
-            PerformStackOps();
+            //PerformStackOps();
+            PerformQueueOps();
             //PerformExcerciseOps();
         }
 
@@ -63,11 +67,32 @@ namespace Data_Structures
             Console.ReadLine();
         }
 
+        private static void PerformQueueOps()
+        {
+            var arrayQueue = new ArrayQueue<int>(5);
+            arrayQueue.Enqueue(10);
+            arrayQueue.Enqueue(20);
+            arrayQueue.Enqueue(30);
+            Console.WriteLine(arrayQueue.Dequeue());
+            Console.WriteLine(arrayQueue.Dequeue());
+            arrayQueue.Enqueue(40);
+            arrayQueue.Enqueue(50);
+            arrayQueue.Enqueue(60);
+            arrayQueue.Enqueue(70);
+            Console.WriteLine(arrayQueue.ToString());
+            Console.ReadLine();
+        }
+
         private static void PerformExcerciseOps()
         {
             var ex = new Excercise();
             Console.WriteLine(ex.ReverseUsingStack("abcdef"));
             Console.WriteLine(ex.IsBalancedExpression2("((([1] + [[3]] ))) <{aaa}>"));
+            var queue = new Queue<int>();
+            queue.Enqueue(10);
+            queue.Enqueue(20);
+            queue.Enqueue(30);
+            Console.WriteLine(ex.ReverseQueue<int>(queue));
             Console.ReadLine();
         }
     }
