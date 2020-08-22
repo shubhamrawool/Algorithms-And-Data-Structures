@@ -69,6 +69,7 @@ namespace Data_Structures
 
         private static void PerformQueueOps()
         {
+            // Queue using array 
             var arrayQueue = new ArrayQueue<int>(5);
             arrayQueue.Enqueue(10);
             arrayQueue.Enqueue(20);
@@ -79,7 +80,24 @@ namespace Data_Structures
             arrayQueue.Enqueue(50);
             arrayQueue.Enqueue(60);
             arrayQueue.Enqueue(70);
+
+            // Queue using stack
             Console.WriteLine(arrayQueue.ToString());
+            var stackQueue = new StackQueue<int>();
+            stackQueue.Enqueue(10);
+            stackQueue.Enqueue(20);
+            stackQueue.Enqueue(30);
+            Console.WriteLine(stackQueue.Dequeue());
+            Console.WriteLine(stackQueue.Dequeue());
+            Console.ReadLine();
+
+            //Priority Queue
+            var priorityQueue = new PriorityQueue(5);
+            priorityQueue.Enqueue(10);
+            priorityQueue.Enqueue(8);
+            priorityQueue.Enqueue(9);
+            priorityQueue.Enqueue(7);
+            Console.WriteLine(priorityQueue.ToString());
             Console.ReadLine();
         }
 

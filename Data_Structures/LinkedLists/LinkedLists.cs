@@ -5,23 +5,23 @@ namespace Data_Structures.LinkedLists
 {
     public class LinkedLists<T>
     {
-        private class Node<T>
+        private class Node
         {
             public Node(T value)
             {
                 this.value = value;
             }
             public T value;
-            public Node<T> next;
+            public Node next;
         }
 
-        private Node<T> first { get; set; }
-        private Node<T> last { get; set; }
+        private Node first { get; set; }
+        private Node last { get; set; }
         public int Length { get; private set; }
 
         public void AddFirst(T value)
         {
-            var node = new Node<T>(value);
+            var node = new Node(value);
             if (IsEmpty())
             {
                 first = last = node;
@@ -36,7 +36,7 @@ namespace Data_Structures.LinkedLists
 
         public void AddLast(T value)
         {
-            var node = new Node<T>(value);
+            var node = new Node(value);
             if (IsEmpty())
             {
                 first = last = node;
@@ -179,7 +179,7 @@ namespace Data_Structures.LinkedLists
             return first == null;
         }
 
-        private Node<T> GetPreviousNode(Node<T> node)
+        private Node GetPreviousNode(Node node)
         {
             var current = first;
             while (current != null)
