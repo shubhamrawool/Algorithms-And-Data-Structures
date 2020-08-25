@@ -2,8 +2,8 @@
 using Data_Structures.LinkedLists;
 using Data_Structures.Queue;
 using Data_Structures.Stack;
+using Data_Structures.HashTable;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Data_Structures
@@ -15,7 +15,8 @@ namespace Data_Structures
             //PerformArrayOps();
             //PerformLinkedListOps();
             //PerformStackOps();
-            PerformQueueOps();
+            //PerformQueueOps();
+            PerformHashTableOps();
             //PerformExcerciseOps();
         }
 
@@ -101,6 +102,19 @@ namespace Data_Structures
             Console.ReadLine();
         }
 
+        private static void PerformHashTableOps()
+        {
+            var hashTable = new HashTables(5);
+            hashTable.Put(1, "a");
+            hashTable.Put(6, "aa");
+            hashTable.Put(11, "aaa");
+            Console.WriteLine(hashTable.Get(11));
+            hashTable.Remove(6);
+            hashTable.Put(1, "a");
+            hashTable.Put(2, "b");
+            Console.WriteLine("abc");
+        }
+
         private static void PerformExcerciseOps()
         {
             var ex = new Excercise();
@@ -111,6 +125,8 @@ namespace Data_Structures
             queue.Enqueue(20);
             queue.Enqueue(30);
             Console.WriteLine(ex.ReverseQueue<int>(queue));
+            Console.WriteLine(ex.FindNonRepeatingCharacter("aahhccaaffqqi"));
+            Console.WriteLine(ex.FindRepeatingCharacter("apple"));
             Console.ReadLine();
         }
     }
