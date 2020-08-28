@@ -3,6 +3,7 @@ using Data_Structures.LinkedLists;
 using Data_Structures.Queue;
 using Data_Structures.Stack;
 using Data_Structures.HashTable;
+using Data_Structures.BinaryTree;
 using System;
 using System.Collections.Generic;
 
@@ -16,7 +17,8 @@ namespace Data_Structures
             //PerformLinkedListOps();
             //PerformStackOps();
             //PerformQueueOps();
-            PerformHashTableOps();
+            //PerformHashTableOps();
+            PerfromBinaryTreeOps();
             //PerformExcerciseOps();
         }
 
@@ -113,6 +115,24 @@ namespace Data_Structures
             hashTable.Put(1, "a");
             hashTable.Put(2, "b");
             Console.WriteLine("abc");
+        }
+
+        private static void PerfromBinaryTreeOps()
+        {
+            var binaryTree = new BinaryTree.BinaryTree();
+            binaryTree.Insert(7);
+            binaryTree.Insert(5);
+            binaryTree.Insert(6);
+            binaryTree.Insert(4);
+            binaryTree.Insert(10);
+            binaryTree.Insert(8);
+            binaryTree.Insert(11);
+            binaryTree.Insert(3);
+            binaryTree.Insert(12);
+            binaryTree.Insert(14);
+            Console.WriteLine(binaryTree.Find(8));
+            Console.WriteLine(binaryTree.Find(13));
+            Console.ReadLine();
         }
 
         private static void PerformExcerciseOps()
