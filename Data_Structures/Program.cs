@@ -1,9 +1,9 @@
-﻿using Data_Structures.Exercise;
+﻿using Data_Structures.BinaryTree;
+using Data_Structures.Exercise;
+using Data_Structures.HashTable;
 using Data_Structures.LinkedLists;
 using Data_Structures.Queue;
 using Data_Structures.Stack;
-using Data_Structures.HashTable;
-using Data_Structures.BinaryTree;
 using System;
 using System.Collections.Generic;
 
@@ -119,19 +119,42 @@ namespace Data_Structures
 
         private static void PerfromBinaryTreeOps()
         {
-            var binaryTree = new BinaryTree.BinaryTree();
+            var binaryTree = new BinaryTrees();
             binaryTree.Insert(7);
-            binaryTree.Insert(5);
-            binaryTree.Insert(6);
             binaryTree.Insert(4);
-            binaryTree.Insert(10);
+            binaryTree.Insert(9);
+            binaryTree.Insert(1);
+            binaryTree.Insert(6);
             binaryTree.Insert(8);
-            binaryTree.Insert(11);
-            binaryTree.Insert(3);
-            binaryTree.Insert(12);
-            binaryTree.Insert(14);
+            binaryTree.Insert(10);
             Console.WriteLine(binaryTree.Find(8));
             Console.WriteLine(binaryTree.Find(13));
+            Console.WriteLine("Pre Order Traversal");
+            binaryTree.TraverseTreePreOrder();
+            Console.WriteLine("In Order Traversal");
+            binaryTree.TraverseTreeInOrder();
+            Console.WriteLine("Post Order Traversal");
+            binaryTree.TraverseTreePostOrder();
+            Console.WriteLine("Height of tree is " + binaryTree.TreeHeight());
+
+            var binaryTree2 = new BinaryTrees();
+            binaryTree2.Insert(7);
+            binaryTree2.Insert(4);
+            binaryTree2.Insert(3);
+            binaryTree2.Insert(9);
+            binaryTree2.Insert(1);
+            binaryTree2.Insert(6);
+            binaryTree2.Insert(8);
+            binaryTree2.Insert(10);
+
+            Console.WriteLine("Two binary trees are equal :" + binaryTree.IsEqual(binaryTree2));
+            Console.WriteLine("Binary Tree is binary search tree : " + binaryTree.IsBinarySearchTree());
+
+            Console.WriteLine(string.Join(",", binaryTree.GetNodesAtKDistance(2).ToArray()));
+
+            Console.WriteLine("Level Order Traversal");
+            binaryTree.LevelOrderTraversal();
+
             Console.ReadLine();
         }
 
