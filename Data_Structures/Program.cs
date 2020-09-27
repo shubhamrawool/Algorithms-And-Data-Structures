@@ -1,9 +1,11 @@
-﻿using Data_Structures.BinaryTree;
+﻿using Data_Structures.AVLTrees;
+using Data_Structures.BinaryTree;
 using Data_Structures.Exercise;
 using Data_Structures.HashTable;
 using Data_Structures.LinkedLists;
 using Data_Structures.Queue;
 using Data_Structures.Stack;
+using Data_Structures.AVLTrees;
 using System;
 using System.Collections.Generic;
 
@@ -18,7 +20,8 @@ namespace Data_Structures
             //PerformStackOps();
             //PerformQueueOps();
             //PerformHashTableOps();
-            PerfromBinaryTreeOps();
+            //PerfromBinaryTreeOps();
+            PerformAVLTreeOps();
             //PerformExcerciseOps();
         }
 
@@ -155,6 +158,19 @@ namespace Data_Structures
             Console.WriteLine("Level Order Traversal");
             binaryTree.LevelOrderTraversal();
 
+            Console.ReadLine();
+        }
+
+        public static void PerformAVLTreeOps()
+        {
+            var avlTree = new AVLTree();
+            avlTree.Insert(7);
+            avlTree.Insert(5);
+            avlTree.Insert(12);
+            avlTree.Insert(6);
+            avlTree.Insert(9);
+            avlTree.Insert(11);
+            avlTree.Insert(13);
             Console.ReadLine();
         }
 
