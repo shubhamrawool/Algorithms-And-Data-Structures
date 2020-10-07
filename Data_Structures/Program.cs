@@ -5,7 +5,7 @@ using Data_Structures.HashTable;
 using Data_Structures.LinkedLists;
 using Data_Structures.Queue;
 using Data_Structures.Stack;
-using Data_Structures.AVLTrees;
+using Data_Structures.Heaps;
 using System;
 using System.Collections.Generic;
 
@@ -21,7 +21,8 @@ namespace Data_Structures
             //PerformQueueOps();
             //PerformHashTableOps();
             //PerfromBinaryTreeOps();
-            PerformAVLTreeOps();
+            //PerformAVLTreeOps();
+            PerformHeapOps();
             //PerformExcerciseOps();
         }
 
@@ -172,6 +173,24 @@ namespace Data_Structures
             avlTree.Insert(11);
             avlTree.Insert(13);
             Console.ReadLine();
+        }
+
+        public static void PerformHeapOps()
+        {
+            var heap = new Heaps.Heaps(10);
+            heap.Insert(15);
+            heap.Insert(10);
+            heap.Insert(3);
+            heap.Insert(8);
+            heap.Insert(12);
+            heap.Insert(9);
+            heap.Insert(4);
+            heap.Insert(1);
+            heap.Insert(24);
+            heap.Remove();
+            var array = new int[5] { 10, 20, 30, 40, 50 };
+            var heapArray = MaxHeap.Heapify(array);
+            Console.WriteLine(MaxHeap.KthLargestItem(array, 2));
         }
 
         private static void PerformExcerciseOps()
