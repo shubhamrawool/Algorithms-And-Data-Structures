@@ -8,6 +8,7 @@ using Data_Structures.Stack;
 using Data_Structures.Heaps;
 using System;
 using System.Collections.Generic;
+using Data_Structures.Trie;
 
 namespace Data_Structures
 {
@@ -20,9 +21,10 @@ namespace Data_Structures
             //PerformStackOps();
             //PerformQueueOps();
             //PerformHashTableOps();
-            //PerfromBinaryTreeOps();
+            //PerfomBinaryTreeOps();
             //PerformAVLTreeOps();
-            PerformHeapOps();
+            //PerformHeapOps();
+            PerformTrieOps();
             //PerformExcerciseOps();
         }
 
@@ -121,7 +123,7 @@ namespace Data_Structures
             Console.WriteLine("abc");
         }
 
-        private static void PerfromBinaryTreeOps()
+        private static void PerfomBinaryTreeOps()
         {
             var binaryTree = new BinaryTrees();
             binaryTree.Insert(7);
@@ -191,6 +193,23 @@ namespace Data_Structures
             var array = new int[5] { 10, 20, 30, 40, 50 };
             var heapArray = MaxHeap.Heapify(array);
             Console.WriteLine(MaxHeap.KthLargestItem(array, 2));
+        }
+
+        private static void PerformTrieOps()
+        {
+            var tri = new TriesUsingHashmap();
+            tri.Insert("car");
+            tri.Insert("care");
+            tri.Insert("card");
+            tri.Insert("cardio");
+            var list = tri.AutoComplete("car");
+
+            tri.Insert("cat");
+            tri.Insert("catch");
+            Console.WriteLine(tri.Contains("cat"));
+            Console.WriteLine(tri.Contains("catc"));
+            tri.Traverse();
+            tri.Remove("catch");
         }
 
         private static void PerformExcerciseOps()
