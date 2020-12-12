@@ -9,6 +9,7 @@ using Data_Structures.Heaps;
 using System;
 using System.Collections.Generic;
 using Data_Structures.Trie;
+using Data_Structures.Graph;
 
 namespace Data_Structures
 {
@@ -24,7 +25,8 @@ namespace Data_Structures
             //PerfomBinaryTreeOps();
             //PerformAVLTreeOps();
             //PerformHeapOps();
-            PerformTrieOps();
+            //PerformTrieOps();
+            PerformGraphOps();
             //PerformExcerciseOps();
         }
 
@@ -210,6 +212,60 @@ namespace Data_Structures
             Console.WriteLine(tri.Contains("catc"));
             tri.Traverse();
             tri.Remove("catch");
+        }
+
+        private static void PerformGraphOps()
+        {
+            var graph = new Graphs();
+            graph.AddNode("a");
+            graph.AddNode("b");
+            graph.AddNode("c");
+            graph.AddEdge("a", "b");
+            graph.AddEdge("a", "c");
+            graph.Print();
+
+            var graph2 = new Graphs();
+            graph2.AddNode("a");
+            graph2.AddNode("b");
+            graph2.AddNode("c");
+            graph2.AddNode("d");
+            graph2.AddEdge("a", "b");
+            graph2.AddEdge("a", "c");
+            graph2.AddEdge("b", "d");
+            graph2.AddEdge("d", "c");
+            Console.WriteLine("Recursive Depth First Traversal");
+            graph2.RecursiveDepthFirstTraversal("a");
+            Console.WriteLine("Iterative Depth First Traversal");
+            graph2.IterativeDepthFirstTraversal("a");
+            Console.WriteLine("Breadth First Traversal");
+            graph2.BreadthFirstTraversal("a");
+
+            var graph3 = new Graphs();
+            graph3.AddNode("x");
+            graph3.AddNode("a");
+            graph3.AddNode("b");
+            graph3.AddNode("p");
+            graph3.AddEdge("x", "a");
+            graph3.AddEdge("x", "b");
+            graph3.AddEdge("a", "p");
+            graph3.AddEdge("b", "p");
+
+            Console.WriteLine("Topolocally Sorted List");
+            graph3.TopologicalSort().ForEach(x =>
+            {
+                Console.WriteLine(x);
+            });
+
+            var graph4 = new Graphs();
+            graph4.AddNode("a");
+            graph4.AddNode("b");
+            graph4.AddNode("c");
+            graph4.AddNode("d");
+            graph4.AddEdge("a", "b");
+            graph4.AddEdge("b", "c");
+            graph4.AddEdge("c", "a");
+            graph4.AddEdge("a", "d");
+            Console.WriteLine("Graph contains Cycle" + graph4.IsCyclePresent());
         }
 
         private static void PerformExcerciseOps()
