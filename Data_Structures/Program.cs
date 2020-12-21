@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using Data_Structures.Trie;
 using Data_Structures.Graph;
+using Data_Structures.Undirected_Graph;
 
 namespace Data_Structures
 {
@@ -26,7 +27,8 @@ namespace Data_Structures
             //PerformAVLTreeOps();
             //PerformHeapOps();
             //PerformTrieOps();
-            PerformGraphOps();
+            //PerformGraphOps();
+            PerformUndirectedGraphOps();
             //PerformExcerciseOps();
         }
 
@@ -266,6 +268,62 @@ namespace Data_Structures
             graph4.AddEdge("c", "a");
             graph4.AddEdge("a", "d");
             Console.WriteLine("Graph contains Cycle" + graph4.IsCyclePresent());
+        }
+
+        public static void PerformUndirectedGraphOps()
+        {
+            var undirectedGraph = new UndirectedGraph();
+            undirectedGraph.AddNode("A");
+            undirectedGraph.AddNode("B");
+            undirectedGraph.AddNode("C");
+            undirectedGraph.AddEdge("A", "B", 3);
+            undirectedGraph.AddEdge("A", "C", 2);
+            undirectedGraph.Print();
+
+            Console.WriteLine("Dijkstra Start");
+
+            var dijkstraDemo = new UndirectedGraph();
+            dijkstraDemo.AddNode("A");
+            dijkstraDemo.AddNode("B");
+            dijkstraDemo.AddNode("C");
+            dijkstraDemo.AddNode("D");
+            dijkstraDemo.AddNode("E");
+            dijkstraDemo.AddEdge("A", "B", 3);
+            dijkstraDemo.AddEdge("A", "C", 4);
+            dijkstraDemo.AddEdge("A", "D", 2);
+            dijkstraDemo.AddEdge("B", "D", 6);
+            dijkstraDemo.AddEdge("B", "E", 1);
+            dijkstraDemo.AddEdge("C", "D", 1);
+            dijkstraDemo.AddEdge("D", "E", 5);
+            dijkstraDemo.Print();
+            Console.WriteLine("Shortest Path from A to E is : " + dijkstraDemo.GetShortestDistance("A", "E"));
+
+            Console.WriteLine("Cycle Detection");
+            var cycleDetectionDemo = new UndirectedGraph();
+            cycleDetectionDemo.AddNode("A");
+            cycleDetectionDemo.AddNode("B");
+            cycleDetectionDemo.AddNode("C");
+            cycleDetectionDemo.AddNode("D");
+            cycleDetectionDemo.AddEdge("A", "B", 1);
+            cycleDetectionDemo.AddEdge("B", "C", 1);
+            cycleDetectionDemo.AddEdge("C", "A", 2);
+            cycleDetectionDemo.Print();
+            Console.WriteLine("The graph contains cycle : " + cycleDetectionDemo.HasCycles());
+
+            Console.WriteLine("Prim's Algorithm for Minimum Spanning Tree");
+            var primDemo = new UndirectedGraph();
+            primDemo.AddNode("A");
+            primDemo.AddNode("B");
+            primDemo.AddNode("C");
+            primDemo.AddNode("D");
+            primDemo.AddEdge("A", "B", 3);
+            primDemo.AddEdge("A", "C", 1);
+            primDemo.AddEdge("B", "C", 2);
+            primDemo.AddEdge("B", "D", 4);
+            primDemo.AddEdge("C", "D", 5);
+            primDemo.Print();
+            Console.WriteLine("Minimum Spanning Tree is : ");
+            primDemo.FindMinimumSpanningTree().Print();
         }
 
         private static void PerformExcerciseOps()
