@@ -1,5 +1,6 @@
 ﻿using Algorithms.Searching_Algorithm;
 using Algorithms.Sorting_Algorithms;
+using Algorithms.String_Manipulation_Algorithms;
 using System;
 
 namespace Algorithms
@@ -9,7 +10,8 @@ namespace Algorithms
         static void Main(string[] args)
         {
             //ExecuteSortingAlorithms();
-            ExecuteSearchingAlgorithms();
+            //ExecuteSearchingAlgorithms();
+            ExecuteStringManipulationAlgorithms();
         }
 
         private static void ExecuteSortingAlorithms()
@@ -38,6 +40,21 @@ namespace Algorithms
             Console.WriteLine("Executing Ternary Search : Index of 6 - " + new TernarySearch().Search(arrayToSearch, valueToSearch));
             Console.WriteLine("Executing Jump Search : Index of 6 - " + new JumpSearch().Search(arrayToSearch, valueToSearch));
             Console.WriteLine("Executing Exponential Search : Index of 6 -" + new ExponentialSearch().Search(arrayToSearch, valueToSearch));
+        }
+
+        private static void ExecuteStringManipulationAlgorithms()
+        {
+            var stringToManipulate = "hellooo  worldddd!!!";
+            var stringUtils = new StringUtils();
+            Console.WriteLine("Reversing a string" + stringUtils.ReverseString(stringToManipulate));
+            Console.WriteLine("Number of vowels in string : " + stringUtils.CountVowels(stringToManipulate));
+            Console.WriteLine("Reversing a word : " + stringUtils.ReverseWords(stringToManipulate));
+            Console.WriteLine("Check If String is Rotation of Another : 'ABCD' -- 'CDAB' : " + stringUtils.CheckRotation("ABCD", "CDBA"));
+            Console.WriteLine("Removing Duplicates from string : " + stringUtils.RemoveDuplicates(stringToManipulate));
+            Console.WriteLine("Most Repeated character in string : " + stringUtils.MostRepeatedCharacter(stringToManipulate));
+            Console.WriteLine("Capitalizing Word in sentence : " + stringUtils.CapitalizeSentence(stringToManipulate));
+            Console.WriteLine("Check If Anagram : " + stringUtils.CheckAnagramHistogramming("ABCD", "DCAE"));
+            Console.WriteLine("Check If Palindrom : " + stringUtils.CheckPalindrom("ABBA"));
         }
     }
 }
